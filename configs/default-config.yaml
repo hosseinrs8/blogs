@@ -6,8 +6,8 @@ postgres-identity-general:
   database: 'blogs'
 
 firebase:
-  apiKey: '***'
-  projectId: '***'
+  apiKey: 'AIzaSyBxDEol31HEg5ZKCsz-rdEwaJua2kfA81c'
+  projectId: 'sample-firebase-30865'
 
 redis-identity-general:
   url: 'redis://0.0.0.0:6379'

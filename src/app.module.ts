@@ -6,6 +6,7 @@ import { PostgresFactory } from './tools/postgres/pg.factory';
 import { ConfigService } from './tools/config/config.service';
 import { AuthenticationCache } from './auth/cache/authentication.cache';
 import { RedisFactory } from './tools/redis/redis.factory';
+import { PermissionModule } from './permission/permission.module';
 
 @Module({
   providers: [
@@ -15,6 +16,6 @@ import { RedisFactory } from './tools/redis/redis.factory';
     AuthenticationCache,
     RedisFactory,
   ],
-  imports: [AuthModule, BlogsModule],
+  imports: [AuthModule, BlogsModule, PermissionModule],
 })
 export class AppModule {}

@@ -21,3 +21,9 @@ create table if not exists blogs (
     "owner" uuid references users(id) not null,
     "createdAt" timestamp default now()
 );
+
+create table if not exists permissions (
+    id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
+    "userId" uuid references users(id) not null ,
+    authorities integer[] not null
+);

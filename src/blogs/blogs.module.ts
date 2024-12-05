@@ -5,6 +5,7 @@ import { ConfigService } from '../tools/config/config.service';
 import { PostgresFactory } from '../tools/postgres/pg.factory';
 import { BlogPgRepository } from './repositories/blog.pg.repository';
 import { ImageService } from '../tools/image/image.service';
+import { PermissionModule } from '../permission/permission.module';
 
 @Module({
   controllers: [BlogsController],
@@ -15,5 +16,6 @@ import { ImageService } from '../tools/image/image.service';
     PostgresFactory,
     ImageService,
   ],
+  imports: [PermissionModule],
 })
 export class BlogsModule {}
