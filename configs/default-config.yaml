@@ -1,0 +1,13 @@
+postgres-identity-general:
+  host: '127.0.0.1'
+  port: 5432
+  passwordPath: 'secrets/pg_pass'
+  username: 'postgres'
+  database: 'blogs'
+
+firebase:
+  apiKey: 'AIzaSyBxDEol31HEg5ZKCsz-rdEwaJua2kfA81c'
+  projectId: 'sample-firebase-30865'
+
+redis-identity-general:
+  url: 'redis://0.0.0.0:6379'
