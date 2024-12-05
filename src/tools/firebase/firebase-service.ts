@@ -34,7 +34,7 @@ export class FirebaseService {
       .then(({ user }) => user)
       .catch((error) => {
         this.logger.error('register error', { error });
-        throw new UnauthorizedException('FirebaseRegister');
+        throw new UnauthorizedException(`FirebaseRegister:${error.code}`);
       });
   }
 
@@ -43,7 +43,7 @@ export class FirebaseService {
       .then(({ user }) => user)
       .catch((error) => {
         this.logger.error('login error', { error });
-        throw new UnauthorizedException('FirebaseLogin');
+        throw new UnauthorizedException(`FirebaseLogin:${error.code}`);
       });
   }
 }

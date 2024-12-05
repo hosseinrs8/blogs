@@ -1,8 +1,7 @@
 create table if not exists users (
     id uuid DEFAULT gen_random_uuid() PRIMARY KEY,
     name varchar(128) not null ,
-    email varchar(128) not null ,
-    password varchar (512) not null
+    email varchar(128) not null
 );
 
 create table if not exists sessions (

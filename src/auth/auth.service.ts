@@ -47,7 +47,7 @@ export class AuthService {
   }
 
   async logout(token: string): Promise<boolean> {
-    const session = await this.sessionRepo.findOne(token);
+    const session = await this.sessionRepo.findByToken(token);
     this.logger.debug('logout user', { id: session.userId });
     if (!session) {
       this.logger.warn('session not found', { token });

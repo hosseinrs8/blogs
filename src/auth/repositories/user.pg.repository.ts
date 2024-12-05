@@ -12,11 +12,11 @@ export class UserPgRepository {
     this.client = this.postgresFactory.createPool('general');
   }
 
-  create({ name, password, email }: UserRegisterDto): Promise<UserEntity> {
+  create({ name, email }: UserRegisterDto): Promise<UserEntity> {
     return this.client
       .query<UserEntity>(
-        `insert into users(name, email, password) values ($1, $2, $3) returning *;`,
-        [name, email, password],
+        `insert into users(name, email) values ($1, $2) returning *;`,
+        [name, email],
       )
       .then(({ rows }) => rows[0]);
   }
